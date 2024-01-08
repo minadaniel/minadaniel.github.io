@@ -1,1 +1,0 @@
-# minadaniel.github.io
