@@ -16,7 +16,7 @@ const texts = [
    
     "Game Developer ",
 ]
-let speed = 80;
+let speed = 180;
 const textElements = document.querySelector(".typewriter-text");
 let textIndex = 0;
 let charcterIndex = 0;
