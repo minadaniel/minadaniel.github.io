@@ -12,11 +12,11 @@ function cancel(){
 // Typewriter Effect
 const texts = [
    
-   " Game development" ,
+   "Software Developer" ,
    
-    " Freelance services on Upwork",
+    "Game Developer ",
 ]
-let speed  =100;
+let speed = 80;
 const textElements = document.querySelector(".typewriter-text");
 let textIndex = 0;
 let charcterIndex = 0;
