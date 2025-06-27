@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const Games = () => {
   const games = [
@@ -8,20 +8,23 @@ const Games = () => {
       title: "Shape Shift: Puzzle Game",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=200&fit=crop",
       alt: "Shape Shift",
-      description: "Addictive puzzle game that challenges players' coordination skills. I came up with the idea, designed the game mechanics, created all assets, and developed it fully in Godot."
+      description: "Addictive puzzle game that challenges players' coordination skills. I came up with the idea, designed the game mechanics, created all assets, and developed it fully in Godot.",
+      githubLink: "https://github.com/your-username/shape-shift-game" // TODO: Replace with your actual GitHub repository URL
     },
     {
       title: "Space War",
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=200&fit=crop",
       alt: "Space War", 
-      description: "A classic arcade-style space shooter featuring escalating difficulty, enemy ships, asteroids, and powerful upgrades. Designed for casual but engaging gameplay with retro vibes."
+      description: "A classic arcade-style space shooter featuring escalating difficulty, enemy ships, asteroids, and powerful upgrades. Designed for casual but engaging gameplay with retro vibes.",
+      githubLink: "https://github.com/your-username/space-war-game" // TODO: Replace with your actual GitHub repository URL
     },
     {
       title: "Catch Key",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop",
       alt: "Catch Key",
       description: "A simple game where the player taps at just the right moment to catch a key using a bouncing ball. I also created a full Arabic course teaching how to build this game using Godot 4, covering topics like GDScript basics, signals, input handling, and Android export.",
-      link: "https://www.udemy.com/course/arabic-godot-4-2d-android-game/"
+      link: "https://www.udemy.com/course/arabic-godot-4-2d-android-game/",
+      githubLink: "https://github.com/your-username/catch-key-game" // TODO: Replace with your actual GitHub repository URL
     }
   ];
 
@@ -44,7 +47,7 @@ const Games = () => {
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="relative overflow-hidden">
-              {/* TODO: Replace with actual game screenshots */}
+              {/* TODO: Replace with actual game screenshots - Upload your game images to /public/images/ folder and update the src paths */}
               <img 
                 src={game.image}
                 alt={game.alt}
@@ -61,17 +64,29 @@ const Games = () => {
                 {game.description}
               </p>
               
-              {game.link && (
+              <div className="flex flex-wrap gap-3">
                 <a 
-                  href={game.link}
+                  href={game.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-red-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                  className="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-red-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
                 >
-                  <ExternalLink size={16} />
-                  Course on Udemy
+                  <Github size={16} />
+                  GitHub
                 </a>
-              )}
+                
+                {game.link && (
+                  <a 
+                    href={game.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-red-500 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                  >
+                    <ExternalLink size={16} />
+                    Course on Udemy
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

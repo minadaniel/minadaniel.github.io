@@ -65,7 +65,7 @@ const Experience = () => {
               </div>
               <div className="flex items-center gap-4 mt-2 sm:mt-0">
                 <span className="text-gray-500 italic text-sm">{exp.period}</span>
-                {/* TODO: Replace with actual project images */}
+                {/* TODO: Replace with actual project images - Upload your images to /public/images/ and update src paths */}
                 <img 
                   src={exp.image} 
                   alt={exp.alt}

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-br from-slate-800 to-blue-600 text-white py-16 px-4 rounded-b-3xl shadow-2xl animate-fade-in">
       <div className="container mx-auto text-center max-w-4xl">
-        {/* TODO: Replace with actual profile image */}
+        {/* TODO: Replace with your actual profile image - Upload your photo to /public/images/profile.jpg and change src to "/images/profile.jpg" */}
         <img 
           src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop&crop=face" 
           alt="Mina Daniel" 
