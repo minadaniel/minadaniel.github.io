@@ -282,11 +282,15 @@
         }
         
         .game-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
         
         .game-card:hover .game-img {
             transform: scale(1.1);
@@ -386,7 +390,7 @@
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>Creative and results-driven Godot Developer with strong experience in designing and developing engaging 2D games and cross-platform desktop and mobile applications. Skilled in GDScript, JavaScript, Firebase integration, and UI/UX design. Proven track record of delivering polished, bug-free games and apps for clients worldwide.</p>
+            <p>Creative Godot Developer with strong experience in designing and developing engaging 2D games and cross-platform desktop and mobile applications. Skilled in GDScript, Java, JavaScript, Firebase integration. Proven track record of delivering polished, bug-free games and apps for clients worldwide.</p>
             <p>Quick to learn and adapt to new tools and project requirements. Available for remote freelance projects with strong communication skills and attention to detail.</p>
         </section>
         
@@ -433,7 +437,7 @@
                     <span class="date">2019 - Present</span>
                 </div>
                 <p><strong>Upwork – Remote</strong></p>
-                <img src="https://via.placeholder.com/100x100?text=Upwork" alt="Upwork" style="float:right; margin-left:20px; border-radius:10px;"><ul>
+                <img src="images/upwork.png" alt="Upwork" style="float: center; height:150px; border-radius:10px;"><ul>
                     <li>Completed multiple freelance projects using Godot Engine for both mobile and desktop platforms</li>
                     <li>Developed fully functional and responsive 2D games with custom UI and smooth gameplay</li>
                     <li>Integrated Firebase for authentication and real-time data handling</li>
@@ -449,7 +453,7 @@
                 <div class="project-links">
                     <a href="https://www.coralkingdom.info/" target="_blank"><i class="fas fa-external-link-alt"></i> Project Website</a>
                 </div>
-                <img src="https://via.placeholder.com/100x100?text=Coral+Kingdom" alt="Coral Kingdom" style="float:right; margin-left:20px; border-radius:10px;"><ul>
+                <img src="images/ck.png" alt="Coral Kingdom" style="float: center; height:150px; border-radius:10px;"><ul>
                     <li>Leading the development of Coral Kingdom, an aquarium-style 2D game inspired by Facebook's aquarium games</li>
                     <li>Built using Godot Engine with Firebase database and authentication integration</li>
                     <li>Responsible for core gameplay systems, data syncing, and smooth user experience</li>
@@ -462,7 +466,7 @@
                     <h3>Hospital Productivity App</h3>
                     <span class="date">Internal Project</span>
                 </div>
-                <img src="https://via.placeholder.com/100x100?text=Hospital+App" alt="Hospital App" style="float:right; margin-left:20px; border-radius:10px;">
+                <img src="images/ivi.png" alt="Hospital App" style="float: center; height:150px; border-radius:10px;">
                 <ul>
                     <li>Designed and built a custom productivity tool for a hospital department</li>
                     <li>Enabled staff to organize, update, and securely share data using Firebase cloud services</li>
@@ -472,12 +476,12 @@
         
         
 <section id="games">
-    <h2>Funny Android Games I've Made</h2>
-    <p>I’ve created several fun and playable Android games using the Godot Engine. While they are not yet published on the Play Store, they’re complete, enjoyable, and reflect my skills in game design, GDScript, and mobile development.</p>
+    <h2>Android Games Design</h2>
+    <p>I’ve created several fun and playable Android games using the Godot Engine. These games are complete, enjoyable, and reflect my skills in game design, GDScript, and mobile development.</p>
 
     <div class="games-grid">
         <div class="game-card">
-            <img src="https://via.placeholder.com/300x150?text=Shape+Shift" alt="Shape Shift" class="game-img">
+            <img src="images/shape-shift.png" alt="Shape Shift" class="game-img">
             <div class="game-info">
                 <h3 class="game-title">Shape Shift: Puzzle Game</h3>
                 <p>Addictive puzzle game that challenges players' coordination skills. I came up with the idea, designed the game mechanics, created all assets, and developed it fully in Godot.</p>
@@ -485,7 +489,7 @@
         </div>
 
         <div class="game-card">
-            <img src="https://via.placeholder.com/300x150?text=Space+War" alt="Space War" class="game-img">
+            <img src="images/space-war.png" alt="Space War" class="game-img">
             <div class="game-info">
                 <h3 class="game-title">Space War</h3>
                 <p>A classic arcade-style space shooter featuring escalating difficulty, enemy ships, asteroids, and powerful upgrades. Designed for casual but engaging gameplay with retro vibes.</p>
@@ -493,7 +497,7 @@
         </div>
 
         <div class="game-card">
-            <img src="https://via.placeholder.com/300x150?text=Catch+Key" alt="Catch Key" class="game-img">
+            <img src="images/catch-key.png" alt="Catch Key" class="game-img">
             <div class="game-info">
                 <h3 class="game-title">Catch Key</h3>
                 <p>A simple game where the player taps at just the right moment to catch a key using a bouncing ball. I also created a full Arabic course teaching how to build this game using Godot 4, covering topics like GDScript basics, signals, input handling, and Android export.</p>
