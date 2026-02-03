@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Daniel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #bb86fc;
+            --secondary: #03dac6;
+            --accent: #cf6679;
+            --bg-dark: #121212;
+            --bg-elevated: #1e1e1e;
+            --bg-card: #2d2d2d;
+            --text-primary: #e1e1e1;
+            --text-secondary: #b0b0b0;
+            --border: #3d3d3d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(187, 134, 252, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            margin-bottom: 20px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 0 0 20px rgba(187, 134, 252, 0.6);
+        }
+        
+        h1 {
+            margin: 10px 0;
+            font-size: 2.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+        
+        section {
+            background: var(--bg-elevated);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+        section:nth-child(4) { animation-delay: 0.8s; }
+        section:nth-child(5) { animation-delay: 1.0s; }
+        section:nth-child(6) { animation-delay: 1.2s; }
+        section:nth-child(7) { animation-delay: 1.4s; }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 0;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.5s ease;
+        }
+        
+        h2:hover::after {
+            width: 100px;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(187, 134, 252, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .skill-category h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+            color: var(--text-secondary);
+        }
+        
+        li:hover {
+            color: var(--primary);
+        }
+        
+        .experience-item, .project-item, .education-item {
+            margin-bottom: 30px;
+        }
+        
+        .experience-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .project-links {
+            margin-top: 10px;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .project-links a:hover {
+            color: var(--primary);
+            background: var(--bg-card);
+            transform: translateY(-2px);
+        }
+        
+        .project-links i {
+            margin-right: 5px;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .game-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(187, 134, 252, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .game-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .game-info {
+            padding: 20px;
+        }
+        
+        .game-title {
+            color: var(--primary);
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+        
+        .game-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            margin-top: 40px;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid var(--border);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        footer p {
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        footer:hover p {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header, .project-header {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 5px;
+            }
+        }
+    
+        /* New animation for experience images */
+        @keyframes fadeZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .experience-item img {
+            animation: fadeZoom 0.8s ease-out;
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/profile.png" alt="Mina Daniel" class="profile-img">
+        <h1>Mina Daniel</h1>
+        <p class="tagline">Godot Developer | Game and App Developer</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ElMinya, Egypt</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:mina1231994@gmail.com">mina1231994@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+201141691810">+20 114 169 1810</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-upwork"></i>
+                <a href="https://www.upwork.com/freelancers/~017dbb2a265cd0ee8f" target="_blank">Upwork Profile</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Creative Godot Developer with strong experience in designing and developing engaging 2D, 2.5D, and 3D games along with cross-platform desktop and mobile applications. Skilled in GDScript, C#, Java, JavaScript, Firebase integration, and Nakama multiplayer systems. Proven track record of delivering polished, bug-free games and apps for clients worldwide.</p>
+            <p>Quick to learn and adapt to new tools and project requirements. Available for remote freelance projects with strong communication skills and attention to detail.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Languages & Tools</h4>
+                    <ul>
+                        <li>GDScript (Godot)</li>
+                        <li>C#</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>Firebase (Firestore, Realtime DB, Auth)</li>
+                        <li>Git (GitHub)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks/Engines</h4>
+                    <ul>
+                        <li>Godot Engine (2D, 2.5D & 3D Game Development)</li>
+                        <li>Nakama (Multiplayer Integration)</li>
+                        <li>Figma (UI/UX Design)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Specializations</h4>
+                    <ul>
+                        <li>2D, 2.5D & 3D Game Development</li>
+                        <li>Multiplayer Game Systems</li>
+                        <li>Mobile Game Development</li>
+                        <li>Cross-platform Desktop Apps</li>
+                        <li>Firebase Integration</li>
+                        <li>Monetization (AdMob, IAP)</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Freelance Game & App Developer</h3>
+                    <span class="date">2019 - Present</span>
+                </div>
+                <p><strong>Upwork – Remote</strong></p>
+                <img src="images/upwork.png" alt="Upwork" style="float: center; height:150px; border-radius:10px;"><ul>
+                    <li>Completed multiple freelance projects using Godot Engine for both mobile and desktop platforms</li>
+                    <li>Developed fully functional and responsive 2D, 2.5D, and 3D games with custom UI and smooth gameplay</li>
+                    <li>Integrated Firebase for authentication and real-time data handling</li>
+                    <li>Implemented Nakama multiplayer systems for online game features</li>
+                    <li>Maintained excellent client communication and earned positive feedback on Upwork</li>
+                    <li>Achieved a 100% Job Success Score on Upwork with over $2,000 in earnings</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>WordWeave (Developer)</h3>
+                    <span class="date">2025 - Present</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://fourcornerstonesgroup.com/wordweave.html" target="_blank"><i class="fas fa-external-link-alt"></i> Project Website</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.fourcornerstonesgroup.wordweave" target="_blank"><i class="fab fa-google-play"></i> Google Play</a>
+                </div>
+                <img src="images/wordweave.png" alt="WordWeave" style="float: center; height:150px; border-radius:10px;">
+                <ul>
+                    <li>Developed WordWeave, a relaxing word puzzle game where players swap tiles to form words</li>
+                    <li>Built using Godot Engine with clean, distraction-free design focused on user experience</li>
+                    <li>Implemented multiple grid sizes (3×3 to larger challenges) and difficulty settings</li>
+                    <li>Created core gameplay mechanics including tile swapping, word validation, and puzzle generation systems</li>
+                    <li>Designed for quick mental breaks with potential for deep, challenging gameplay</li>
+                    <li>Currently in early access with ongoing development for new features including progress tracking and creative game modes</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Coral Kingdom (Lead Developer)</h3>
+                    <span class="date">Ongoing</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://novaadream.wixsite.com/coral-kingdom-copy" target="_blank"><i class="fas fa-external-link-alt"></i> Project Website</a>
+                </div>
+                <img src="images/ck.png" alt="Coral Kingdom" style="float: center; height:150px; border-radius:10px;"><ul>
+                    <li>Contributed to the development of Coral Kingdom, an aquarium-style 2D game inspired by classic Facebook aquarium games</li>
+                    <li>Built using Godot Engine with Firebase database and authentication integration</li>
+                    <li>Developed core gameplay systems, ensured smooth performance, and handled real-time data syncing</li>
+                    <li>Collaborated with the team to support updates and new features</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Hospital Productivity App</h3>
+                    <span class="date">Internal Project</span>
+                </div>
+                <img src="images/ivi.png" alt="Hospital App" style="float: center; height:150px; border-radius:10px;">
+                <ul>
+                    <li>Designed and built a custom productivity tool for a hospital department</li>
+                    <li>Enabled staff to organize, update, and securely share data using Firebase cloud services</li>
+                </ul>
+            </div>
+        </section>
+        
+        
+<section id="games">
+    <h2>Android Games Design</h2>
+    <p>I've created several fun and playable Android games using the Godot Engine. These games are complete, enjoyable, and reflect my skills in game design, GDScript, and mobile development.</p>
+
+    <div class="games-grid">
+        <div class="game-card">
+    <img src="images/shape-shift.png" alt="Shape Shift" class="game-img">
+    <div class="game-info">
+        <h3 class="game-title">Shape Shift: Puzzle Game</h3>
+        <p>Addictive puzzle game that challenges players' coordination skills. I came up with the idea, designed the game mechanics, created all assets, and developed it fully in Godot.</p>
+        <div class="project-links">
+            <a href="https://github.com/minadaniel/shape-shift" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+        <div class="game-card">
+    <img src="images/space-war.png" alt="Space War" class="game-img">
+    <div class="game-info">
+        <h3 class="game-title">Space War</h3>
+        <p>A classic arcade-style space shooter featuring escalating difficulty, enemy ships, asteroids, and powerful upgrades. Designed for casual but engaging gameplay with retro vibes.</p>
+        <div class="project-links">
+            <a href="https://github.com/minadaniel/shape-shift" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+       <div class="game-card">
+    <img src="images/catch-key.png" alt="Catch Key" class="game-img">
+    <div class="game-info">
+        <h3 class="game-title">Catch Key</h3>
+        <p>A simple game where the player taps at just the right moment to catch a key using a bouncing ball. I also created a full Arabic course teaching how to build this game using Godot 4, covering topics like GDScript basics, signals, input handling, animations, UI design and Android export.</p>
+        <div class="project-links">
+            <a href="https://www.udemy.com/course/arabic-godot-4-2d-android-game/" target="_blank">
+                <i class="fas fa-link"></i> Course on Udemy
+            </a>
+            <a href="https://github.com/minadaniel/shape-shift" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</div>
+    </div>
+</section>
+
+        
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Medicine and Surgery</h3>
+                <p>Ain Shams University – Class of 2018</p>
+            </div>
+        </section>
+        
+        <section id="languages">
+            <h2>Languages</h2>
+            <ul>
+                <li><strong>Arabic:</strong> Native</li>
+                <li><strong>English:</strong> Professional (IELTS 7.5)</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Mina Daniel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
