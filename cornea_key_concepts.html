@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cornea & Refractive Surgery — Key Concepts</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #111;
+  background: #fff;
+  display: flex;
+}
+
+/* ── SIDEBAR ── */
+#toc {
+  position: fixed; top: 0; left: 0;
+  width: 220px; height: 100vh;
+  overflow-y: auto;
+  background: #1a3a5c;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  z-index: 100;
+}
+#toc .toc-title {
+  padding: 16px 14px 10px;
+  color: #a8c8f0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+#toc ul { list-style: none; padding: 6px 0; }
+#toc a {
+  display: block;
+  padding: 4px 14px;
+  color: #b8d4ee;
+  text-decoration: none;
+}
+#toc a:hover, #toc a.active {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+#toc .toc-group {
+  padding: 8px 14px 2px;
+  font-size: 9px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+#toc .sub { padding-left: 24px !important; font-size: 11px; }
+
+/* ── MAIN ── */
+main {
+  margin-left: 220px;
+  max-width: 820px;
+  padding: 0;
+}
+
+/* ── COVER ── */
+.cover {
+  background: #1a3a5c;
+  color: white;
+  padding: 60px 48px 48px;
+  border-bottom: 4px solid #2980b9;
+}
+.cover h1 { font-size: 32px; margin-bottom: 12px; font-weight: normal; }
+.cover h1 span { color: #7ec8e3; }
+.cover p { color: rgba(255,255,255,0.7); max-width: 520px; font-size: 14px; margin-bottom: 8px; }
+.cover .meta { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 24px; font-style: italic; }
+
+/* ── SECTIONS ── */
+.chapter {
+  padding: 44px 48px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.chapter:nth-child(even) { background: #fafafa; }
+
+.ch-header {
+  border-bottom: 2px solid #1a3a5c;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+}
+.ch-header h2 {
+  font-size: 22px; font-weight: bold;
+  color: #1a3a5c;
+}
+.ch-header .sub {
+  font-size: 13px; color: #666;
+  margin-top: 4px;
+  font-family: Arial, sans-serif;
+}
+
+h3 { font-size: 17px; color: #1a3a5c; margin: 28px 0 10px; }
+h4 { font-size: 13px; font-family: Arial, sans-serif; color: #2980b9;
+  text-transform: uppercase; letter-spacing: 0.6px;
+  margin: 18px 0 6px; }
+p { margin-bottom: 12px; }
+ul, ol { padding-left: 22px; margin-bottom: 12px; }
+li { margin-bottom: 5px; }
+b, strong { color: #111; }
+
+/* ── CALLOUTS ── */
+.callout {
+  padding: 11px 16px;
+  margin: 14px 0;
+  border-left: 4px solid;
+  border-radius: 0 4px 4px 0;
+  font-family: Arial, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.pearl { background: #fffbea; border-color: #d4a000; color: #4a3000; }
+.warn  { background: #fff2f2; border-color: #c0392b; color: #7a0000; }
+.note  { background: #eef8f4; border-color: #27ae60; color: #0a4020; }
+.mnem  { background: #f4eeff; border-color: #8e44ad; color: #3a0060; }
+
+/* ── CONCEPT BOX ── */
+.concept {
+  border: 1px solid #c8ddf5;
+  background: #f0f6ff;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-family: Arial, sans-serif;
+  font-size: 13.5px;
+}
+.concept-title {
+  font-weight: bold; color: #1a3a5c;
+  margin-bottom: 8px; font-size: 13px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* ── TABLE ── */
+.tbl-wrap { overflow-x: auto; margin: 18px 0; }
+table { width: 100%; border-collapse: collapse;
+  font-family: Arial, sans-serif; font-size: 13px; }
+th { background: #1a3a5c; color: white; padding: 9px 12px; text-align: left; }
+td { padding: 8px 12px; border-bottom: 1px solid #ddd; vertical-align: top; }
+tr:nth-child(even) td { background: #f5f8ff; }
+td.hl { font-weight: bold; color: #1a3a5c; }
+
+/* ── COMPARE GRID ── */
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+.cmp-box { border-radius: 6px; padding: 14px 18px; font-size: 13.5px;
+  font-family: Arial, sans-serif; }
+.cmp-box.left { background: #edf4ff; border: 1px solid #a8c4e8; }
+.cmp-box.right { background: #edfaf4; border: 1px solid #7ec8a8; }
+.cmp-title { font-weight: bold; margin-bottom: 8px; font-size: 13px;
+  text-transform: uppercase; letter-spacing: 0.4px; }
+.cmp-box.left .cmp-title { color: #1a3a5c; }
+.cmp-box.right .cmp-title { color: #1a6640; }
+.cmp-box ul { padding-left: 16px; }
+.cmp-box li { margin-bottom: 4px; font-size: 13px; }
+
+/* ── IMAGES ── */
+.img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.img-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 20px 0; }
+figure.clinical-image { margin: 18px 0; }
+figure.clinical-image img { width: 100%; max-width: 640px; border-radius: 5px;
+  border: 1px solid #ccc; display: block; }
+figcaption { font-size: 11.5px; color: #555; margin-top: 6px;
+  font-family: Arial, sans-serif; font-style: italic; line-height: 1.5; }
+figure.img-missing { background: #f0f0f0; border: 1px dashed #bbb;
+  border-radius: 5px; padding: 18px; color: #888; font-size: 12px;
+  font-family: Arial, sans-serif; text-align: center; }
+figure.img-missing::before { content: "📷 Image loads when online"; display: block; }
+
+/* ── PRINT ── */
+@media print { #toc { display:none; } main { margin-left:0; } }
+@media (max-width:800px) { #toc { display:none; } main { margin-left:0; }
+  .cmp, .img-row, .img-row3 { grid-template-columns:1fr; } .chapter { padding:24px 18px; } }
+</style>
+</head>
+<body>
+<nav id="toc">
+<div class="toc-title">📖 Cornea Key Concepts</div>
+<div class="toc-group">Foundations</div>
+<ul>
+  <li><a href="#anatomy">Corneal Anatomy</a></li>
+  <li><a href="#physiology" class="sub">Physiology & Clarity</a></li>
+</ul>
+<div class="toc-group">Ectasia</div>
+<ul>
+  <li><a href="#kc">Keratoconus</a></li>
+  <li><a href="#kc-signs" class="sub">Clinical Signs</a></li>
+  <li><a href="#pentacam" class="sub">Pentacam Maps</a></li>
+  <li><a href="#pmd" class="sub">PMD vs KC</a></li>
+  <li><a href="#hydrops" class="sub">Acute Hydrops</a></li>
+</ul>
+<div class="toc-group">Degenerations</div>
+<ul>
+  <li><a href="#iron">Iron Lines</a></li>
+  <li><a href="#band">Band Keratopathy</a></li>
+  <li><a href="#puk">PUK & Mooren's</a></li>
+</ul>
+<div class="toc-group">Dystrophies</div>
+<ul>
+  <li><a href="#dystrophies">Stromal Dystrophies</a></li>
+  <li><a href="#fuchs">Fuchs Dystrophy</a></li>
+</ul>
+<div class="toc-group">Infections</div>
+<ul>
+  <li><a href="#bacterial">Bacterial Keratitis</a></li>
+  <li><a href="#fungal">Fungal Keratitis</a></li>
+  <li><a href="#hsv">HSV Keratitis / HEDS</a></li>
+  <li><a href="#acanthamoeba">Acanthamoeba</a></li>
+  <li><a href="#neurotrophic">Neurotrophic Keratopathy</a></li>
+</ul>
+<div class="toc-group">Keratoplasty</div>
+<ul>
+  <li><a href="#graft-types">Types & Choosing</a></li>
+  <li><a href="#rejection">Graft Rejection</a></li>
+  <li><a href="#donation">Corneal Donation</a></li>
+</ul>
+<div class="toc-group">Refractive</div>
+<ul>
+  <li><a href="#lasik">LASIK — Principles</a></li>
+  <li><a href="#cxl">Cross-Linking (CXL)</a></li>
+  <li><a href="#icrs">ICRS</a></li>
+  <li><a href="#other-ref">PRK, CK, Others</a></li>
+</ul>
+</nav>
+<main>
+<div class="cover" id="top">
+<h1>Cornea &amp; Refractive Surgery<br><span>Key Concepts</span></h1>
+<p>A reading guide for first-year ophthalmology residents — built to develop understanding, not just memorisation.
+Each section explains the <em>why</em> behind findings and treatments, with real clinical images.</p>
+<p>Companion to the Egyptian Fellowship model answers and MCQ revision files.</p>
+<div class="meta">Sources: Kanski's Clinical Ophthalmology 9th ed. · AAO BCSC Sections 8 &amp; 13 · HEDS Study ·
+Images: Wikimedia Commons (CC-licensed, loaded from web when online)</div>
+</div>
+<section id="anatomy" class="chapter">
+<div class="ch-header">
+  <h2>🔬 Corneal Anatomy &amp; Physiology</h2>
+  <div class="sub">The six layers, their clinical significance, and why the cornea is transparent</div>
+</div>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cornea_layers.svg/800px-Cornea_layers.svg.png" alt="Corneal layers cross-section" 
+       style="width:60%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Corneal layers diagram — Bowman's layer (B), Stroma (S), Descemet's membrane (D), Endothelium (E). (Wikimedia Commons)</figcaption>
+</figure>
+
+<h3>The Six Layers — What Each One Means Clinically</h3>
+
+<div class="concept">
+<div class="concept-title">Epithelium (50 µm, 5–6 cell layers)</div>
+<p>Regenerates completely every <b>7–10 days</b> from <b>limbal stem cells</b> at the Palisades of Vogt.
+This is why an abrasion heals in 48–72 hours. The stem cells are the factory — destroy them and the conjunctiva grows onto the cornea (conjunctivalisation = limbal stem cell deficiency / LSCD).</p>
+<p>Patients with severe chemical burns, Stevens-Johnson syndrome, or multiple surgeries can deplete limbal stem cells → the corneal surface becomes chronically unstable and vascularised. 
+Treatment: limbal stem cell transplantation (from fellow eye or living relative).</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Bowman's Layer (12–15 µm, acellular)</div>
+<p><b>Cannot regenerate</b> — any injury leaves a permanent opacity/scar. This is clinically important for dystrophies that target Bowman's (Reis-Bücklers, Thiel-Behnke) — they cause irreversible haze.
+PTK can ablate superficial Bowman's opacities, but the layer itself never reforms.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Stroma (~500 µm — 90% of total thickness)</div>
+<p>Made of regular parallel collagen lamellae (types I and V) maintained by <b>keratocytes</b>. 
+The precise 60 nm spacing between lamellae produces <b>destructive interference of scattered light</b> — this is what makes the stroma transparent.
+Any disruption (oedema, scar, infiltrate) breaks the regular spacing → opacity.</p>
+<p>In keratoconus: collagen fibres are thinner and disorganised → structural weakness → ectasia under normal IOP.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Dua's Layer (pre-Descemet's, ~15 µm) — identified 2013</div>
+<p>A distinct acellular layer between stroma and Descemet's. 
+<b>Clinically relevant for DALK surgery</b>: Anwar's big-bubble technique targets the plane between stroma and Dua's layer.
+Type 1 bubble (between stroma and Dua's) = ideal. Type 2 bubble (between Dua's and DM) = less ideal but still usable.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Descemet's Membrane (10–12 µm)</div>
+<p>Basement membrane of the endothelium. Secreted throughout life — thickens with age (~3 µm at birth, ~10–12 µm in adults).
+<b>Rupture → acute hydrops</b> (aqueous floods stroma → sudden white opacification in advanced KC).
+In Fuchs dystrophy, abnormal collagen deposits form <b>guttae</b> on its posterior surface.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Endothelium (single layer of ~500,000 cells, ~5 µm)</div>
+<p>The most important layer for corneal clarity. 
+Normal density: <b>2,500–3,000 cells/mm²</b>. Critical threshold: <b>~500–700 cells/mm²</b> — below this the pump fails and the cornea becomes permanently oedematous.</p>
+<p><b>Human endothelial cells cannot divide</b> (arrested in G1 phase). Lost cells are replaced by neighbouring cells spreading and enlarging (polymegethism = unequal size; pleomorphism = irregular shape) — seen on specular microscopy as a warning sign of endothelial stress.</p>
+<p>Function: actively pumps Na⁺ out of stroma (Na/K-ATPase + carbonic anhydrase driven) → maintains corneal dehydration (normal water content ~78%). Without this active pumping the stroma would absorb aqueous and become oedematous.</p>
+</div>
+
+<div class="callout pearl">📌 The endothelium is a PUMP, not a barrier. When it fails, fluid accumulates from the inside. This is why Fuchs patients have morning blur — overnight, without evaporation from a closed eye, the failing pump cannot compensate, and fluid accumulates.</div>
+
+<h3 id="physiology">Why Is the Cornea Transparent?</h3>
+<p>Three simultaneous requirements — loss of <b>any one</b> causes opacity:</p>
+<ol>
+  <li><b>Avascularity</b> — blood vessels scatter light and carry inflammatory cells. The limbal vessels terminate at the corneal margin. Anything that induces corneal vascularisation (chronic hypoxia from CL, chemical burns, severe dry eye) threatens transparency.</li>
+  <li><b>Regular collagen spacing</b> — lamellae at ~60 nm intervals cancel scattered light by destructive interference. Oedema pushes fibres apart; scars disorganise them — both cause opacity.</li>
+  <li><b>Relative dehydration</b> — maintained by the endothelial pump. Normal water content ~78%; if this rises to ~85%+ the stroma clouds.</li>
+</ol>
+
+<h3>Corneal Sensation</h3>
+<p>The cornea is the most densely innervated tissue in the body — <b>ophthalmic branch of CN V (trigeminal)</b> via the nasociliary nerve → long ciliary nerves → sub-basal nerve plexus (visible on confocal microscopy).
+Sensation serves two purposes: (1) protective blink reflex and (2) neurotrophic support — corneal nerves release substance P and nerve growth factor (NGF) that directly maintain epithelial health.
+This is why CN V damage (not CN VII) causes neurotrophic keratopathy.</p>
+
+<div class="callout warn">⚠️ The distinction between CN V and CN VII damage causes constant confusion. CN V = sensation (trigeminal) = neurotrophic keratopathy when damaged. CN VII = eyelid closure (facial nerve) = exposure/lagophthalmos keratopathy when damaged. Two completely different entities with different mechanisms and different treatments.</div>
+
+</section>
+<section id="kc" class="chapter">
+<div class="ch-header">
+  <h2>🔺 Keratoconus &amp; Ectasia</h2>
+  <div class="sub">Progressive non-inflammatory corneal thinning and protrusion — most common ectasia, most common corneal transplant indication under 40</div>
+</div>
+
+<p>Keratoconus (KC) begins insidiously in late teens, progresses through the 20s and 30s, then typically stabilises. 
+The typical presenting story: a young patient whose glasses prescription keeps changing (myopia + astigmatism increasing), who never quite gets good vision even with new glasses, and whose retinoscopy shows a "scissors" movement instead of a clean reflex.</p>
+
+<h3 id="kc-signs">Clinical Signs</h3>
+
+<div class="img-row">
+  <figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Vogt%27s_striae_in_keratoconus.jpg/640px-Vogt%27s_striae_in_keratoconus.jpg" alt="Vogt's striae keratoconus" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Vogt's striae in keratoconus — fine vertical stress lines in deep stroma visible on retroillumination. (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure>
+  <figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Fleischer_ring.jpg/640px-Fleischer_ring.jpg" alt="Fleischer ring keratoconus" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Fleischer ring — incomplete iron ring at base of KC cone, best seen with cobalt blue filter. (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure>
+</div>
+
+<div class="img-row">
+  <figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Munson%27s_sign.jpg/480px-Munson%27s_sign.jpg" alt="Munson's sign keratoconus" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Munson's sign — V-shaped deformation of lower eyelid on downgaze caused by advanced KC cone. (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure>
+  <figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Keratoconus_corneal_topography.jpg/640px-Keratoconus_corneal_topography.jpg" alt="Keratoconus corneal topography" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Keratoconus axial topography — classic inferior steepening (red/orange island inferiorly). (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure>
+</div>
+
+<div class="concept">
+<div class="concept-title">Vogt's Striae</div>
+<p>Fine <b>vertical</b> lines in the deep posterior stroma caused by mechanical stress from the cone. 
+The pathognomonic test: they <b>disappear transiently with gentle digital pressure</b> on the globe (briefly equalising the stress). 
+Post-traumatic or other stromal lines do not disappear with pressure.
+Best seen on slit lamp with direct narrow beam or retroillumination.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Fleischer Ring</div>
+<p>Haemosiderin (iron) deposited in the basal epithelium at the base of the cone due to disruption of normal tear film distribution. 
+Characteristically <b>incomplete</b> (not a full 360° ring). 
+Best seen with <b>cobalt blue filter</b>.
+<b>Key distinction from PMD</b>: PMD does NOT have a Fleischer ring — it only occurs where there is a cone (KC, Keratoglobus not PMD).</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Munson's Sign</div>
+<p>The cone protrudes far enough to push the lower eyelid into a <b>V-shape on downgaze</b>. 
+This is a late, advanced sign — if present, the KC is clinically significant. 
+Ask the patient to look straight down at the floor and observe the lower lid contour from the side.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Oil-Droplet / Scissors Reflex</div>
+<p>On <b>retinoscopy</b>: the cone deflects the retinoscopy reflex so it moves in a "scissors" pattern (two lobes moving in opposite directions) instead of a uniform sweep. 
+On <b>direct ophthalmoscopy</b>: a dark shadow ring around a brighter central area ("oil droplet") as the cone displaces the reflex. 
+This is often the first clinical suspicion of KC — during routine refraction in a young patient.</p>
+</div>
+
+<div class="callout note">💡 Wessely ring = immune ring (antigen-antibody complexes in mid-stroma) seen in viral/bacterial keratitis. It is NOT a sign of KC. Distinguish carefully — this comes up in nearly every KC exam question.</div>
+
+<h3 id="pentacam">Understanding the Pentacam</h3>
+<p>The Pentacam uses a rotating Scheimpflug camera to build a 3D model of the cornea from multiple slit images. 
+It generates four key maps that together tell you whether a cornea is safe for refractive surgery or showing early ectasia.</p>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pentacam_keratoconus.jpg/640px-Pentacam_keratoconus.jpg" alt="Pentacam keratoconus 4-map display" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Pentacam 4-map refractive display in keratoconus — note inferior steepening on curvature maps and posterior elevation island. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="concept">
+<div class="concept-title">Map 1 — Axial (Sagittal) Curvature</div>
+<p>Shows average curvature at each point, referenced to the corneal apex. 
+Colours = dioptric power: <b>red/orange = steep</b> (high K), <b>blue = flat</b> (low K). 
+Normal central K = 41–46D. 
+In KC: characteristic <b>inferior steepening</b> — an island of warm colour inferiorly. Most intuitive map for spotting KC.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Map 2 — Tangential (Instantaneous) Curvature</div>
+<p>Shows the local rate of curvature change — more sensitive to sudden transitions in surface shape than the axial map (which averages over a larger area and smooths small changes). 
+Better for detecting peripheral ectasia, early changes, and for contact lens fitting.
+Looks more alarming than axial in early KC — don't let this mislead you.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Map 3 — Pachymetry Map</div>
+<p>Corneal thickness at every point. Normal: thickest at periphery (~650–700 µm), thinning centrally (~520–560 µm). 
+In KC: <b>thinnest point shifts inferiorly</b> and the peripheral-to-central thinning gradient is steeper than normal. 
+Critical for surgery: need ≥400 µm for safe CXL, ≥250 µm RSB after LASIK ablation.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Map 4 — Elevation Maps (Front &amp; Back)</div>
+<p>Height of the corneal surface above/below a "best-fit sphere" — a mathematical sphere that best matches the patient's cornea.
+<b>Warm colours (red) = elevated</b> above the sphere (the cone protrudes).
+<b>The posterior elevation map is the most sensitive indicator of early ectasia</b> — the back surface deforms before the front.
+Suspicious: posterior elevation >16 µm above best-fit sphere.
+Normal: ≤12 µm anterior, ≤15 µm posterior elevation above BFS.</p>
+</div>
+
+<div class="callout pearl">📌 Posterior elevation is the earliest Pentacam finding in subclinical (forme fruste) KC. A front map that looks nearly normal but has a posterior elevation island >16 µm warrants serious caution before LASIK. This is the most clinically important Pentacam concept for refractive surgery screening.</div>
+
+<div class="concept">
+<div class="concept-title">BAD-D Score (Belin-Ambrosio Enhanced Ectasia Display)</div>
+<p>A composite score that compares the patient's values against a normative database across all maps simultaneously.
+<b>BAD-D &gt;1.6 = suspicious for ectasia</b> — most surgeons use this as the final safety gate.
+Combines: front/back elevation deviation, pachymetric progression index, and overall deviation from normal population.
+Advantages: catches borderline cases that look almost normal on individual maps.</p>
+</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>Amsler-Krumeich Stage</th><th>Kmax (D)</th><th>Pachymetry (µm)</th><th>BCVA</th><th>Clinical Relevance</th></tr></thead><tbody><tr><td>Subclinical / Forme fruste</td><td><48</td><td>Normal</td><td>Good — glasses adequate</td><td>LASIK CONTRAINDICATED</td></tr><tr><td>Stage I (mild)</td><td><48</td><td>>500</td><td>Good — glasses/RGP</td><td>CXL if progressing</td></tr><tr><td>Stage II (moderate)</td><td>48–53</td><td>400–500</td><td>Reduced — needs RGP/scleral</td><td>CXL + consider ICRS</td></tr><tr><td>Stage III (mod-advanced)</td><td>53–55</td><td>300–400</td><td>Significantly reduced</td><td>ICRS + CXL; consider DALK timing</td></tr><tr><td>Stage IV (advanced)</td><td>>55 or central scar</td><td><200 or scarring</td><td>Poor</td><td>DALK or PK</td></tr></tbody></table></div>
+
+<h3 id="pmd">Keratoconus vs Pellucid Marginal Degeneration</h3>
+
+<div class="cmp">
+  <div class="cmp-box left">
+    <div class="cmp-title">Keratoconus</div>
+    <ul>
+      <li>Thinning <b>at</b> the apex of the cone</li>
+      <li>Protrusion <b>at</b> the thinning point (same location)</li>
+      <li>Central or paracentral location</li>
+      <li>Fleischer ring <b>present</b></li>
+      <li>Vogt's striae <b>present</b></li>
+      <li>Topography: inferior steepening</li>
+      <li>Oil-droplet reflex on retinoscopy</li>
+    </ul>
+  </div>
+  <div class="cmp-box right">
+    <div class="cmp-title">Pellucid Marginal Degeneration</div>
+    <ul>
+      <li>Thinning = inferior band, <b>1–2 mm from limbus</b></li>
+      <li>Protrusion <b>ABOVE</b> the thinning ← key distinction</li>
+      <li>Clear zone between thinning and limbus (hallmark)</li>
+      <li>No Fleischer ring</li>
+      <li>No Vogt's striae</li>
+      <li>Topography: <b>butterfly / crab-claw</b> pattern</li>
+      <li>Severe against-the-rule astigmatism</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout mnem">🧠 <b>PMD:</b> Protrusion is Missing from the thinning zone — it's <em>above</em> it, not at it. The band thins but doesn't protrude; the cornea above it buckles forward.</div>
+
+<h3 id="hydrops">Acute Hydrops</h3>
+
+<div class="concept">
+<div class="concept-title">What Happens</div>
+<p>In advanced KC, Descemet's membrane (DM) can suddenly <b>rupture</b>. Aqueous from the anterior chamber rushes through the tear into the stroma → dramatic acute stromal oedema → <b>sudden white opacification</b> of the cornea + vision drop.
+The patient experiences sudden severe visual loss, often with some pain. The eye looks white/grey in the corneal region.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Management — NOT an Emergency for Surgery</div>
+<p>Conservative first — DM will heal on its own over 6–10 weeks:</p>
+<ul>
+  <li>Cycloplegic (e.g. cyclopentolate) for ciliary spasm</li>
+  <li>Hypertonic saline 5% drops (osmotically draws water from oedematous stroma)</li>
+  <li>Lubricants and BCL for comfort</li>
+  <li>Reassurance — the stroma will clear once DM heals</li>
+</ul>
+<p><b>Intracameral gas injection</b> (C3F8 or SF6): newer technique — gas bubble pushed against the DM tear accelerates healing. Shortens duration from ~10 weeks to ~3–5 weeks.</p>
+<p>After resolution: scar usually remains → reassess for keratoplasty at ~4–6 months (wait for oedema to fully resolve).</p>
+</div>
+
+<div class="callout warn">⚠️ Acute hydrops is NOT an indication for emergency keratoplasty. Operating on an acutely inflamed, oedematous cornea leads to poor graft outcomes. Wait for resolution — this is a classic exam and clinical trap.</div>
+
+</section>
+<section id="iron" class="chapter">
+<div class="ch-header">
+  <h2>🟤 Corneal Degenerations &amp; Iron Lines</h2>
+  <div class="sub">Understanding the mechanism makes the locations logical — all iron lines share one principle</div>
+</div>
+
+<h3>Iron Lines — One Mechanism, Four Locations</h3>
+<p>Haemosiderin (iron) from the tear film deposits in the <b>basal epithelium</b> wherever surface irregularity disrupts normal tear flow and iron pools. 
+All four lines are <b>epithelial level</b> — none are at Descemet's membrane.
+All are best seen with <b>cobalt blue filter</b> on the slit lamp.</p>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Pterygium_on_cornea.jpg/640px-Pterygium_on_cornea.jpg" alt="Pterygium with Stocker line" 
+       style="width:50%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Pterygium — fibrovascular growth from nasal conjunctiva onto cornea; Stocker iron line visible at leading edge. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="tbl-wrap"><table><thead><tr><th>Line</th><th>Location</th><th>Context</th><th>Mechanism</th></tr></thead><tbody><tr><td>Hudson-Ståhli</td><td>Horizontal line at junction of lower and middle thirds of cornea</td><td>Normal ageing — seen in most adults over 50</td><td>Tear pooling at inferior lid margin</td></tr><tr><td>Fleischer Ring</td><td>Ring around base of KC cone</td><td>Keratoconus</td><td>Irregular cone surface disrupts normal tear distribution</td></tr><tr><td>Ferry Line</td><td>Anterior to filtering bleb (superior)</td><td>Post-trabeculectomy</td><td>Tear stagnation anterior to elevated bleb</td></tr><tr><td>Stocker Line</td><td>Anterior to pterygium head</td><td>Pterygium</td><td>Tear pooling at leading edge of pterygium</td></tr></tbody></table></div>
+
+<div class="callout mnem">🧠 <b>Iron lines mnemonic:</b> <b>H</b>udson-Ståhli = <b>H</b>orizontal (normal ageing). <b>F</b>leischer = <b>F</b>unnel (cone base). <b>F</b>erry = <b>F</b>iltering bleb. <b>S</b>tocker = <b>S</b>car of pterygium.</div>
+
+<div class="callout note">💡 The Kayser-Fleischer ring of Wilson's disease is COPPER deposited at Descemet's membrane — completely different mechanism, different level, different disease. Do not confuse with Fleischer ring of KC.</div>
+
+<h3 id="band">Band Keratopathy</h3>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Band_keratopathy.jpg/640px-Band_keratopathy.jpg" alt="Band keratopathy slit lamp" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Band keratopathy — interpalpebral calcium deposition in Bowman's layer with lucid interval at limbus and swiss-cheese holes. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<p>Calcium phosphate deposition in <b>Bowman's layer</b>, limited to the interpalpebral zone (3–9 o'clock) because this exposed area has CO₂ evaporation that raises local pH → calcium phosphate precipitates at higher pH.</p>
+
+<h4>Three Distinguishing Features</h4>
+<ol>
+  <li><b>Lucid interval</b> from the limbus — calcium spares the very peripheral edge where Bowman's layer ends at the limbal connective tissue</li>
+  <li><b>Swiss-cheese holes</b> within the band — perforations where corneal nerves pass through Bowman's (nerves are resistant to calcium deposition)</li>
+  <li><b>Interpalpebral location</b> — follows the palpebral fissure, not the entire circumference</li>
+</ol>
+
+<div class="tbl-wrap"><table><thead><tr><th>Cause</th><th>Notes</th></tr></thead><tbody><tr><td>JIA uveitis</td><td>Most common cause <b>in children</b> — chronic anterior uveitis</td></tr><tr><td>Hypercalcaemia</td><td>Hyperparathyroidism, sarcoid, Vit D toxicity, milk-alkali syndrome</td></tr><tr><td>Phthisis bulbi</td><td>End-stage degenerate eye — often severe/total band</td></tr><tr><td>Silicon oil in APHAKIC eye</td><td>Requires aphakia — lens acts as barrier in phakic/pseudophakic</td></tr><tr><td>Gout</td><td>Urate crystals — also interpalpebral, but different appearance</td></tr><tr><td>Fanconi syndrome</td><td>Phosphaturia → elevated local phosphate</td></tr></tbody></table></div>
+
+<div class="callout pearl">📌 Silicon oil-related band keratopathy ONLY occurs in aphakic eyes. The crystalline lens (or IOL) acts as a barrier. Always document phakic status when planning silicon oil tamponade.</div>
+
+<h4>Treatment</h4>
+<ul>
+  <li><b>EDTA chelation (first-line)</b>: Na₂EDTA 0.37% applied to de-epithelialised cornea — chelates and removes calcium ions. Quick, clinic-based, inexpensive.</li>
+  <li><b>PTK</b>: For recurrent or dense cases — excimer laser ablates the superficial Bowman's layer.</li>
+</ul>
+
+<h3 id="puk">Terrien's Marginal Degeneration</h3>
+
+<div class="cmp">
+  <div class="cmp-box left">
+    <div class="cmp-title">Terrien's Marginal Degeneration</div>
+    <ul>
+      <li>Starts <b>superiorly</b>, spreads circumferentially</li>
+      <li><b>Intact epithelium</b> — no fluorescein staining</li>
+      <li>Lipid deposits at leading edge (yellow-white)</li>
+      <li>Progressive peripheral thinning → severe irregular astigmatism</li>
+      <li>Painless, bilateral, male predominance</li>
+      <li>Pseudo-pterygium may overlie thinned area</li>
+      <li>Risk: perforation with minor trauma</li>
+    </ul>
+  </div>
+  <div class="cmp-box right">
+    <div class="cmp-title">Mooren's Ulcer (contrast)</div>
+    <ul>
+      <li>Starts <b>inferiorly</b>, spreads circumferentially</li>
+      <li><b>Epithelial defect present</b> — fluorescein stains base</li>
+      <li>Painful, aggressive</li>
+      <li>Overhanging/undermined central edge</li>
+      <li>Immune-mediated, no systemic disease (by definition)</li>
+      <li>Limited (unilateral, elderly) vs extensive (bilateral, younger)</li>
+      <li>Rx: conjunctival resection, systemic immunosuppression</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout warn">⚠️ Terrien's has INTACT epithelium — no fluorescein staining of the thinned zone. This is the single most testable feature. Mooren's = ulcer (stains). Terrien's = thinning without ulceration.</div>
+
+<h4>Peripheral Ulcerative Keratitis (PUK)</h4>
+<p>PUK is peripheral corneal ulceration (with epithelial defect + fluorescein staining) associated with systemic vasculitis. 
+The peripheral cornea is vascularised — immune complexes circulating in systemic disease deposit here and activate complement → local inflammation → collagenase release → corneal melt.</p>
+
+<div class="tbl-wrap"><table><thead><tr><th>Associated Disease</th><th>Investigation</th><th>Note</th></tr></thead><tbody><tr><td>Rheumatoid arthritis</td><td>RF, anti-CCP, ESR, CRP</td><td>Most common cause (~50% of PUK)</td></tr><tr><td>GPA (Wegener's)</td><td>c-ANCA (PR3)</td><td>Most dangerous — 40% 2-year mortality if systemic vasculitis untreated</td></tr><tr><td>Polyarteritis nodosa</td><td>p-ANCA, renal biopsy</td><td></td></tr><tr><td>SLE</td><td>ANA, anti-dsDNA</td><td></td></tr><tr><td>Relapsing polychondritis</td><td>Ear/nose cartilage involvement history</td><td></td></tr><tr><td>Mooren's ulcer</td><td>All negative — diagnosis of exclusion</td><td>No systemic disease by definition</td></tr></tbody></table></div>
+
+<div class="callout pearl">📌 When you see PUK — especially bilateral — think GPA (Wegener's) first. Order c-ANCA immediately. Corneal melt from GPA can perforate in days, and the systemic vasculitis can be lethal. This is one situation where the ophthalmologist's diagnosis can save a patient's life.</div>
+
+</section>
+<section id="dystrophies" class="chapter">
+<div class="ch-header">
+  <h2>🧬 Corneal Dystrophies</h2>
+  <div class="sub">Inherited, bilateral, symmetric, non-inflammatory — classified by anatomical layer (IC3D classification)</div>
+</div>
+
+<p>Dystrophies are genetic conditions causing corneal opacification or dysfunction without prior infection or systemic disease.
+The most practical classification is by layer — this immediately tells you what surgery is needed.</p>
+
+<h3>The Three Stromal Dystrophies — The Most-Tested Comparison</h3>
+
+<div class="img-row3"><figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Granular_corneal_dystrophy.jpg/640px-Granular_corneal_dystrophy.jpg" alt="Granular corneal dystrophy slit lamp" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Granular corneal dystrophy — discrete breadcrumb-like opacities with clear stroma between them. (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure><figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Macular_corneal_dystrophy.jpg/640px-Macular_corneal_dystrophy.jpg" alt="Macular corneal dystrophy slit lamp" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Macular corneal dystrophy — diffuse stromal haze extending to limbus; stroma between opacities is CLOUDY (unlike granular). (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure><figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lattice_corneal_dystrophy.jpg/640px-Lattice_corneal_dystrophy.jpg" alt="Lattice corneal dystrophy slit lamp" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Lattice corneal dystrophy type I — refractile branching amyloid lines in stroma. (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure></div>
+
+<div class="callout pearl">📌 The one rule that answers most exam questions: stroma CLEAR between opacities = Granular. Stroma CLOUDY between opacities = Macular. You see LINES (not spots) = Lattice.</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>Feature</th><th>Granular (Groenouw I)</th><th>Macular (Groenouw II)</th><th>Lattice Type I</th></tr></thead><tbody><tr><td>Inheritance</td><td>AD</td><td><b>AR ← only recessive stromal dystrophy</b></td><td>AD</td></tr><tr><td>Gene</td><td>TGFBI (5q31)</td><td>CHST6 (16q22)</td><td>TGFBI (5q31)</td></tr><tr><td>Deposit</td><td>Hyaline</td><td>Keratan sulphate (GAG)</td><td>Amyloid</td></tr><tr><td>Stain</td><td>Masson trichrome (red)</td><td>Alcian blue (blue) / colloidal iron</td><td>Congo red (apple-green birefringence under polarised light)</td></tr><tr><td>Slit lamp appearance</td><td>Discrete white 'breadcrumb' or 'snowflake' opacities</td><td>Diffuse grey haze + ill-defined opacities throughout stroma</td><td>Refractile branching lattice lines, anterior stroma</td></tr><tr><td>Stroma between opacities</td><td><b>CLEAR</b></td><td><b>CLOUDY</b> ← key feature</td><td>Mostly clear (early); hazy later</td></tr><tr><td>Extends to limbus?</td><td>No — central, spares periphery</td><td><b>Yes — reaches limbus</b></td><td>No — central</td></tr><tr><td>Recurrent erosions</td><td>Common</td><td>Less common</td><td><b>Very common</b> (most painful)</td></tr><tr><td>Recurrence after PK</td><td>Yes (~50% at 10yr)</td><td><b>Highest rate</b> (~90% at 10yr)</td><td>Yes (~50–70% at 10yr)</td></tr><tr><td>Systemically</td><td>Cornea only</td><td>Cornea only</td><td>Type II (Meretoja) = systemic amyloid (CN palsies, skin laxity)</td></tr></tbody></table></div>
+
+<div class="concept">
+<div class="concept-title">Why Macular Looks So Different</div>
+<p>Granular and Lattice produce <b>discrete deposits</b> in an otherwise relatively normal-looking stroma. 
+Macular produces diffuse accumulation of keratan sulphate <b>throughout the entire stroma</b> — even the ground substance between opacities is abnormally opaque. 
+This is also why Macular extends to the limbus (disease is pan-stromal) while Granular and Lattice spare the periphery.</p>
+<p>Macular is also unique in involving the full thickness including Descemet's and endothelium — so it has the worst prognosis and highest graft recurrence rate.</p>
+</div>
+
+<h3 id="fuchs">Fuchs Endothelial Dystrophy</h3>
+
+<div class="img-row">
+  <figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Fuchs_endothelial_dystrophy_specular_microscopy.jpg/640px-Fuchs_endothelial_dystrophy_specular_microscopy.jpg" alt="Fuchs dystrophy guttae specular microscopy" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Fuchs endothelial dystrophy — specular microscopy showing central guttae (dark holes) with surrounding polymegethism. (Wikimedia Commons / CC BY-SA)</figcaption>
+  </figure>
+  <figure class="clinical-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cornea_layers.svg/800px-Cornea_layers.svg.png" alt="Corneal layers cross-section" onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+    <figcaption>Corneal layers diagram — Bowman's layer (B), Stroma (S), Descemet's membrane (D), Endothelium (E). (Wikimedia Commons)</figcaption>
+  </figure>
+</div>
+
+<p>The most common indication for endothelial keratoplasty in the West.
+You will see it regularly — typically a woman in her 60s–70s with blurry vision that is worst in the morning and improves through the day.</p>
+
+<div class="concept">
+<div class="concept-title">Why Is Vision Worst in the Morning?</div>
+<p>During sleep the eyes are closed → no evaporation from the ocular surface → the failing endothelium cannot keep up with the extra fluid load → stroma accumulates more water overnight → greater oedema on waking.
+Over the day, evaporation from the open eye removes some fluid → vision improves. 
+This <b>diurnal variation</b> (worse AM, better PM) is essentially pathognomonic for Fuchs.</p>
+<p>As the disease advances, oedema persists all day, then bullae form → pain (ruptured bullae expose bare nerve endings) → eventually sub-epithelial fibrosis forms (paradoxically painless as nerves are destroyed).</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Guttae — Where They Start and Why It Matters</div>
+<p>Guttae (singular gutta = drop) are wart-like excrescences of abnormal collagen deposited on the posterior surface of Descemet's membrane by failing endothelial cells. 
+On specular microscopy they appear as dark holes (non-reflective) giving a "beaten metal" appearance.</p>
+<p><b>Critical fact:</b> In Fuchs, guttae start <b>CENTRALLY</b> and spread towards the periphery. 
+This distinguishes them from <b>Hassall-Henle bodies</b> = peripheral guttae found in normal elderly individuals (age-related, no clinical significance). 
+When you see a patient with peripheral guttae only, do NOT diagnose Fuchs — this is normal ageing.</p>
+</div>
+
+<div class="callout pearl">📌 Central guttae = early Fuchs (requires monitoring and counselling). Peripheral guttae only (Hassall-Henle bodies) = normal ageing. The location determines the significance.</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>Fuchs Stage</th><th>Clinical Findings</th><th>Treatment</th></tr></thead><tbody><tr><td>1 — Guttae only, no oedema</td><td>Central guttae on specular microscopy, normal BCVA, no morning blur</td><td>Observe; annual ECC; counsel about future risk</td></tr><tr><td>2 — Stromal oedema</td><td>Morning blur, haloes, DM folds on slit lamp, ECC declining</td><td>Hypertonic NaCl 5% drops QAM; hair dryer 30cm from face to dry tear film</td></tr><tr><td>3 — Epithelial bullae</td><td>Painful ruptured bullae, decreased BCVA throughout day</td><td>BCL for pain relief; time the DMEK/DSAEK surgery</td></tr><tr><td>4 — Subepithelial fibrosis</td><td>Paradoxically painless (nerve damage), grey haze, permanent vision loss</td><td>Corneal transplantation (DMEK preferred, DSAEK alternative)</td></tr></tbody></table></div>
+
+<div class="callout note">💡 The decision for DSAEK vs DMEK: DMEK gives better visual outcomes (fastest recovery, least graft-host interface) but is technically more demanding to insert. DSAEK is more forgiving. Both are far superior to PK for pure endothelial disease.</div>
+
+</section>
+<section id="bacterial" class="chapter">
+<div class="ch-header">
+  <h2>🦠 Infectious Keratitis</h2>
+  <div class="sub">Bacterial, fungal, viral, and protozoal — recognise each by its context and slit lamp appearance</div>
+</div>
+
+<h3>Bacterial Keratitis</h3>
+<p>The corneal epithelium is normally an effective barrier. Risk factors that breach it: contact lens wear (hypoxia, microtrauma, biofilm formation), trauma, pre-existing corneal disease, dry eye, and post-surgical exposure.</p>
+
+<div class="tbl-wrap"><table><thead><tr><th>Organism</th><th>Classic Context</th><th>Key Feature</th><th>Treatment</th></tr></thead><tbody><tr><td><b>Pseudomonas aeruginosa</b></td><td>Contact lens wearers (especially overwear/swimming)</td><td><b>Rapid progression</b>; liquefactive necrosis from proteases; mucopurulent discharge</td><td>Ciprofloxacin 0.3% or Moxifloxacin 0.5% monotherapy (adequate coverage)</td></tr><tr><td>MRSA</td><td>Post-surgical, ICU patients, nasal MRSA carriers</td><td>Round grey-white infiltrate, not responding to standard drops</td><td><b>Fortified vancomycin</b> (5 mg/mL) — cefazolin and fluoroquinolones often fail</td></tr><tr><td>Strep. pneumoniae</td><td>Trauma, dacryocystitis, dry eye</td><td>Hypopyon common; crystalline appearance</td><td>Amoxicillin-clavulanate or fortified penicillin</td></tr><tr><td>Moraxella catarrhalis</td><td>Alcoholics, debilitated elderly, immunosuppressed</td><td>Slow indolent progression</td><td>Amoxicillin-clavulanate</td></tr><tr><td>Nocardia</td><td><b>Post-LASIK keratitis</b> — think of this</td><td>Irregular 'cracked windscreen' branching pattern</td><td>TMP-SMX (trimethoprim-sulphamethoxazole)</td></tr></tbody></table></div>
+
+<div class="callout warn">⚠️ MRSA keratitis: fluoroquinolones and cefazolin both FAIL. Use VANCOMYCIN. The clinical scenario of a post-surgical patient not responding to standard drops = think MRSA.</div>
+
+<h3 id="fungal">Fungal Keratitis</h3>
+<p>Underdiagnosed because it mimics bacterial keratitis. 
+The key context: <b>corneal ulcer following vegetable/plant trauma not responding to antibiotics</b>.</p>
+
+<div class="cmp">
+  <div class="cmp-box left">
+    <div class="cmp-title">Filamentous (Fusarium, Aspergillus)</div>
+    <ul>
+      <li>Trauma with plant/soil/vegetable matter</li>
+      <li>Feathery, irregular, fluffy borders</li>
+      <li>Satellite lesions (separate infiltrate islands)</li>
+      <li>Endothelial plaque (fungus growing behind DM)</li>
+      <li>Dry, raised surface on slit lamp</li>
+      <li><b>Natamycin 5%</b> — first-line</li>
+      <li>Voriconazole 1% — better penetration, for deep/severe</li>
+    </ul>
+  </div>
+  <div class="cmp-box right">
+    <div class="cmp-title">Yeast (Candida)</div>
+    <ul>
+      <li>Immunocompromised, chronic steroid use, post-surgery</li>
+      <li>More like bacterial — rounder, smoother borders</li>
+      <li>Less satellite lesions</li>
+      <li><b>Voriconazole 1%</b> — first-line</li>
+      <li>Amphotericin B 0.15% — alternative</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout pearl">📌 Natamycin = filamentous fungi. Amphotericin B = yeast (Candida). This is commonly reversed in answers. Remember: Natamycin is topically insoluble (suspension) and doesn't penetrate well — suitable for filamentous infections which tend to be more superficial. Voriconazole penetrates better and is preferred for deep/posterior infections.</div>
+
+<h3 id="hsv">HSV Keratitis</h3>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/HSV_corneal_dendrite.jpg/640px-HSV_corneal_dendrite.jpg" alt="HSV corneal dendrite fluorescein staining" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>HSV epithelial keratitis — classic dendrite with terminal bulbs stained with fluorescein (green) and rose bengal (pink at edges). (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="concept">
+<div class="concept-title">The Dendrite — Understanding the Difference Between True and Pseudo</div>
+<ul>
+  <li><b>HSV (true dendrite)</b>: True epithelial ulcer. Fluorescein stains the <b>base</b> (exposed basement membrane). Rose bengal/lissamine stains the <b>edges</b> (virus-laden border cells). <b>Terminal bulbs at tips</b> — pathognomonic for HSV. Reduced corneal sensation.</li>
+  <li><b>HZV (pseudodendrite)</b>: Elevated <b>mucous plaque</b> — NOT an ulcer. No terminal bulbs. Rose bengal stains the entire plaque. Associated with dermatomal skin rash.</li>
+  <li><b>Acanthamoeba (pseudodendrite)</b>: Coarse, irregular, no terminal bulbs, not ulcerated. Severe pain. CL + tap water history.</li>
+  <li><b>Healing abrasion</b>: Can look dendritic during re-epithelialisation — but has no terminal bulbs, no reduced sensation, and there's a history of trauma.</li>
+</ul>
+</div>
+
+<div class="concept">
+<div class="concept-title">HEDS Study — What Every Ophthalmologist Must Know</div>
+<p>The Herpetic Eye Disease Study (HEDS) was a landmark multi-centre RCT that settled four key controversies.
+You will be asked about this on almost every ophthalmology exam:</p>
+<ol>
+  <li><b>Topical steroids shorten duration of active HSV stromal keratitis</b> — add prednisolone 1% tapering. But: must always add antiviral cover (topical/oral) to prevent reactivation of epithelial disease.</li>
+  <li><b>Oral acyclovir does NOT help active stromal keratitis</b> — the stromal inflammation is immune-mediated (T-cell response to viral antigens), not due to active viral replication. Antivirals target replication, not the immune response.</li>
+  <li><b>Oral acyclovir reduces RECURRENCE by 45%</b> (prophylaxis trial) — standard: acyclovir 400 mg BD for patients with ≥2 episodes/year.</li>
+  <li><b>Oral acyclovir does NOT prevent HSV iritis</b> in patients with concurrent epithelial disease.</li>
+</ol>
+</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>HSV Disease</th><th>Mechanism</th><th>Role of Steroids</th><th>Treatment</th></tr></thead><tbody><tr><td>Epithelial keratitis (dendrite/geographic)</td><td>Active viral replication in epithelium</td><td><b>CONTRAINDICATED</b> — worsen replication → geographic ulcer</td><td>Topical ganciclovir 0.15% gel × 14 days (or acyclovir 3%)</td></tr><tr><td>Disciform stromal keratitis</td><td>Immune response to viral antigens in stroma (endotheliitis component)</td><td><b>Helpful</b> — shorten duration (HEDS)</td><td>Topical prednisolone + antiviral cover + cycloplegic</td></tr><tr><td>Necrotising stromal keratitis</td><td>Mixed: active virus + immune destruction</td><td>Controversial — use cautiously</td><td>Systemic acyclovir 400–800 mg 5×/day + minimal steroid</td></tr><tr><td>HSV iritis</td><td>Immune-mediated</td><td>Helpful for uveitis component</td><td>Steroid + cycloplegic + antiviral cover</td></tr><tr><td>Neurotrophic keratopathy (late)</td><td>CN V damage from prior infections</td><td>No role</td><td>Lubricants; cenegermin (Oxervate); tarsorrhaphy if severe</td></tr></tbody></table></div>
+
+<h3 id="acanthamoeba">Acanthamoeba Keratitis</h3>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Acanthamoeba_keratitis.jpg/640px-Acanthamoeba_keratitis.jpg" alt="Acanthamoeba keratitis slit lamp" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Acanthamoeba keratitis — ring infiltrate (Wessely ring pattern) in advanced case; earlier stages show pseudodendrites and perineural infiltrates. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="concept">
+<div class="concept-title">Classic Presentation — Three Elements</div>
+<ol>
+  <li><b>Contact lens wear + tap water exposure</b> (home-made saline, swimming/showering in lenses, rinsing case with tap water)</li>
+  <li><b>Severe pain disproportionate to clinical signs</b> — caused by perineural infiltrates (radial keratoneuritis) along corneal nerve paths</li>
+  <li><b>Failure to respond to standard antibiotic/antiviral drops</b> — classically misdiagnosed as HSV initially</li>
+</ol>
+</div>
+
+<div class="callout note">💡 Radial keratoneuritis — white linear infiltrates along corneal nerve paths radiating from the stroma — is essentially pathognomonic for Acanthamoeba. If you see this pattern on the slit lamp, start Acanthamoeba treatment immediately without waiting for culture results.</div>
+
+<p><b>Treatment</b>: Polyhexamethylene biguanide (PHMB) 0.02% + propamidine isethionate (Brolene) 0.1% — both drops every hour initially. 
+The double-walled cyst form is resistant to most treatments — this is why treatment continues for months (minimum 3–6 months) to eradicate all cysts.</p>
+
+<div class="callout warn">⚠️ Acanthamoeba is often misdiagnosed as HSV keratitis early on, and topical steroids are given — this dramatically worsens the infection by suppressing the host immune response. Any 'HSV' not responding to ganciclovir in a CL wearer = reconsider Acanthamoeba.</div>
+
+<h3 id="neurotrophic">Neurotrophic Keratopathy</h3>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Neurotrophic_keratopathy.jpg/640px-Neurotrophic_keratopathy.jpg" alt="Neurotrophic keratopathy PED" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Neurotrophic keratopathy stage II — persistent oval epithelial defect in interpalpebral zone with smooth, rolled edges. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="concept">
+<div class="concept-title">Why Loss of Sensation Causes Corneal Disease</div>
+<p>Corneal nerves have two functions beyond sensation:</p>
+<ol>
+  <li>They stimulate the <b>lacrimal reflex</b> — CN V damage → reduced basal tear production</li>
+  <li>They release <b>neuropeptides</b> (substance P, nerve growth factor/NGF, calcitonin gene-related peptide) that directly support epithelial cell health, proliferation, and adhesion</li>
+</ol>
+<p>Without nerve supply, the epithelium becomes fragile, heals poorly, and eventually breaks down spontaneously — even without trauma or infection. 
+The ulcers are characteristically <b>oval, in the interpalpebral zone, painless</b> (hence late presentation), with rolled-in edges.</p>
+</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>Mackie Stage</th><th>Findings</th><th>Treatment</th></tr></thead><tbody><tr><td>Stage I</td><td>Superficial punctate keratopathy, epithelial irregularity, reduced Schirmer</td><td>Preservative-free lubricants Q1–2h; treat underlying cause</td></tr><tr><td>Stage II</td><td>Persistent epithelial defect (PED) >2 weeks, no infection</td><td>Stop all toxic drops; BCL; autologous serum 20%; cenegermin (Oxervate) 20µg/mL 6×/day</td></tr><tr><td>Stage III</td><td>Stromal ulceration/melting, risk of perforation</td><td>All of stage II + tarsorrhaphy; amniotic membrane transplant; cyanoacrylate glue if impending perforation</td></tr></tbody></table></div>
+
+<div class="callout pearl">📌 Cenegermin (Oxervate) = recombinant human NGF — approved for neurotrophic keratopathy. It directly replaces the neuropeptide missing from denervated epithelium. Expensive but effective — dramatic healing in cases that weren't healing with everything else.</div>
+
+</section>
+<section id="graft-types" class="chapter">
+<div class="ch-header">
+  <h2>✂️ Keratoplasty</h2>
+  <div class="sub">Modern corneal surgery is layer-targeted — replace only what's diseased</div>
+</div>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/DALK_big_bubble.jpg/640px-DALK_big_bubble.jpg" alt="DALK big bubble technique" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>DALK big-bubble technique — air injected into deep stroma creates a bubble at the Dua's layer/pre-Descemet plane; overlying stroma is removed leaving DM intact. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<h3>Which Keratoplasty? The Decision Logic</h3>
+
+<div class="concept">
+<div class="concept-title">The Fundamental Question</div>
+<p>Ask: <b>which layer is diseased?</b> Then replace only that layer.</p>
+<ul>
+  <li><b>Stroma diseased, endothelium healthy</b> → DALK (replace stroma, keep own DM + endothelium)</li>
+  <li><b>Endothelium/DM diseased, stroma healthy</b> → DSAEK or DMEK (replace only DM + endothelium)</li>
+  <li><b>Full-thickness disease, or failed previous graft, or DM breach during DALK</b> → PK</li>
+</ul>
+</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>Surgery</th><th>What's Replaced</th><th>What's Kept</th><th>Main Advantage</th><th>Main Indications</th></tr></thead><tbody><tr><td>DALK</td><td>Donor stroma</td><td>Recipient DM + endothelium</td><td>NO endothelial rejection risk</td><td>KC, stromal dystrophies (granular/lattice), herpetic stromal scar, corneal scar from infection</td></tr><tr><td>DSAEK</td><td>Donor DM + endothelium + thin stroma (50–150 µm)</td><td>Recipient stroma</td><td>Easier to manipulate than DMEK; good outcomes</td><td>Fuchs dystrophy, pseudophakic bullous keratopathy (PBK), posterior polymorphous dystrophy</td></tr><tr><td>DMEK</td><td>Donor DM + endothelium only (~10 µm)</td><td>All recipient stroma</td><td>Fastest visual recovery; best outcomes; lowest rejection rate</td><td>Fuchs, PBK — when surgeon is experienced</td></tr><tr><td>PK</td><td>Full thickness cornea</td><td>Nothing (all replaced)</td><td>Only option when full thickness disease</td><td>PBK with significant stroma loss, failed previous grafts, keratoglobus, perforated corneas</td></tr></tbody></table></div>
+
+<div class="concept">
+<div class="concept-title">DALK — Anwar's Big-Bubble Technique Explained</div>
+<p>The challenge of DALK is removing the stroma right down to DM without perforating it (DM is ~10 µm thick).
+Anwar's technique solves this elegantly: <b>inject air (or viscoelastic) into the deep stroma using a 27-gauge needle</b>. 
+The air dissects along the natural plane between stroma and Dua's layer → creates a large air bubble (the "big bubble") that lifts the overlying stroma away from DM.
+Then excise the stroma over the bubble → exposed DM surface → place donor stroma without DM/endothelium.</p>
+<p>If the bubble doesn't form → manual layer-by-layer dissection. If DM perforates during dissection → convert to PK intraoperatively.</p>
+<p><b>Why DALK is preferred over PK for KC:</b></p>
+<ul>
+  <li>No donor endothelium → no endothelial rejection (the only rejection you can't treat medically)</li>
+  <li>Long-term endothelial cell survival better (patient keeps own young, healthy endothelium)</li>
+  <li>Surgical procedure technically closed-eye for most of procedure → safer</li>
+  <li>Corneal donation criteria less strict (endothelial cell count less critical)</li>
+</ul>
+</div>
+
+<h3 id="rejection">Graft Rejection — Recognise and Act Immediately</h3>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Khodadoust_line_endothelial_rejection.jpg/640px-Khodadoust_line_endothelial_rejection.jpg" alt="Khodadoust line endothelial rejection" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Khodadoust line — row of keratic precipitates on donor endothelium advancing across graft; corneal oedema posterior to line. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="concept">
+<div class="concept-title">Why Does Rejection Occur? (Understanding the Immune Privilege)</div>
+<p>The cornea is "immune-privileged" — it lacks blood vessels and lymphatics, so donor antigens cannot easily reach regional lymph nodes to sensitise T-cells. 
+However, privilege is not absolute. 
+If the graft becomes vascularised (from previous disease, surgery, or infection), immune cells gain direct access → rejection risk multiplies.
+This is why a previously vascularised cornea (from herpes, chemical burn, prior failed graft) is "high-risk" and requires systemic immunosuppression (ciclosporin A) after PK.</p>
+</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>Type</th><th>Timing</th><th>What You See</th><th>Severity</th><th>Treatment</th></tr></thead><tbody><tr><td>Epithelial rejection</td><td>Weeks to months</td><td>Advancing line of new host epithelium from limbus; graft appears clear posterior to line</td><td>Mild — best prognosis</td><td>Intensive topical steroids (prednisolone 1% q1–2h)</td></tr><tr><td>Subepithelial (Krachmer) rejection</td><td>Weeks to years; often triggered by viral URTI</td><td>Grey-white subepithelial opacities resembling EKC; may look like adenoviral disease</td><td>Moderate</td><td>Intensive topical dexamethasone</td></tr><tr><td>Stromal rejection</td><td>Months to years</td><td>Stromal haze and oedema without prominent KPs</td><td>Moderate</td><td>Topical + sometimes systemic steroids</td></tr><tr><td>Endothelial rejection (Khodadoust line)</td><td>3 weeks to years post-op</td><td>Linear row of KPs advancing across donor endothelium + corneal oedema behind it</td><td><b>MOST SERIOUS</b></td><td>EMERGENCY — see below</td></tr></tbody></table></div>
+
+<div class="callout warn">⚠️ Endothelial rejection = ophthalmic emergency. Every hour without treatment destroys more endothelial cells — you cannot regenerate them. Start prednisolone 1% every hour immediately, add systemic prednisolone 1 mg/kg/day, and review the patient the next morning. If severe: consider IV methylprednisolone 500 mg.</div>
+
+<div class="callout pearl">📌 Any intraocular procedure in a grafted eye (YAG capsulotomy, intravitreal injection, trabeculoplasty, cataract surgery) can trigger graft rejection in the same eye. Always warn patients and cover with increased topical steroids peri-procedurally.</div>
+
+<h3 id="donation">Corneal Donation — Inclusion and Exclusion</h3>
+
+<div class="cmp">
+  <div class="cmp-box left">
+    <div class="cmp-title">Absolute Contraindications to Donation</div>
+    <ul>
+      <li>HIV positive</li>
+      <li>HBsAg positive / Hepatitis C positive</li>
+      <li>Prion disease (CJD, vCJD, FFI) — <b>absolute</b></li>
+      <li>CNS malignancy (brain tumour, glioma)</li>
+      <li>Leukaemia, lymphoma (haematological malignancy)</li>
+      <li>Death of unknown cause</li>
+      <li>Active systemic sepsis</li>
+      <li>Retinoblastoma or intraocular malignancy</li>
+      <li>Prior LASIK / refractive surgery (unsuitable for optical PK)</li>
+    </ul>
+  </div>
+  <div class="cmp-box right">
+    <div class="cmp-title">Common Exam Traps — CAN Still Donate</div>
+    <ul>
+      <li><b>CMV seropositive</b> — CMV does not transmit via corneal transplantation</li>
+      <li><b>Age &gt;65</b> — not absolute contraindication; ECC must be adequate</li>
+      <li><b>Solid organ cancer</b> (breast, lung, colon) — acceptable if not active at time of death</li>
+      <li><b>Prior retinal surgery</b> (RD repair, vitrectomy) — acceptable</li>
+      <li><b>Prior cataract surgery</b> — acceptable (ECC must be assessed)</li>
+      <li><b>Diabetes</b> — acceptable if ECC adequate</li>
+      <li><b>Hypertension, ischaemic heart disease</b> — acceptable</li>
+    </ul>
+  </div>
+</div>
+
+</section>
+<section id="lasik" class="chapter">
+<div class="ch-header">
+  <h2>👁️ Refractive Surgery</h2>
+  <div class="sub">Principles, safety parameters, and complications — what a resident needs before seeing refractive patients</div>
+</div>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/LASIK_flap.jpg/640px-LASIK_flap.jpg" alt="LASIK corneal flap" 
+       style="width:55%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>LASIK microkeratome flap — hinged corneal flap reflected to expose stroma for excimer laser ablation. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<h3>LASIK — How It Works</h3>
+
+<div class="concept">
+<div class="concept-title">The Excimer Laser (193 nm)</div>
+<p>Operates at 193 nm — this UV wavelength breaks molecular bonds (<b>photoablation</b>) without generating heat.
+Each pulse removes approximately 0.25 µm of stroma.
+To correct <b>myopia</b>: ablate more centrally → flatten cornea → reduce refracting power → focal point moves back to retina.
+For <b>hyperopia</b>: ablate more peripherally → steepen central cornea.
+For <b>astigmatism</b>: differential ablation along steep meridian.</p>
+</div>
+
+<h3>Safety Parameters — The Numbers You Must Know</h3>
+
+<div class="tbl-wrap"><table><thead><tr><th>Parameter</th><th>Minimum Value</th><th>Why This Number</th></tr></thead><tbody><tr><td><b>Residual Stromal Bed (RSB)</b></td><td><b>≥250 µm</b></td><td>Primary anti-ectasia safeguard — stroma must be thick enough to resist IOP-driven ectasia</td></tr><tr><td>Flap thickness (microkeratome)</td><td>100–160 µm</td><td>Included in thickness budget; femtosecond laser makes thinner, more predictable flaps (90–130 µm)</td></tr><tr><td>Post-op total pachymetry</td><td>≥400 µm</td><td>Structural integrity</td></tr><tr><td>Optical zone diameter</td><td>≥6.0 mm</td><td>Smaller OZ = halos when mesopic pupil > OZ diameter</td></tr><tr><td>Refraction stability</td><td>Stable for ≥12 months</td><td>Progressive myopia = will regress post-LASIK</td></tr><tr><td>Minimum age</td><td>≥18 years</td><td>Refraction must be physiologically stable</td></tr><tr><td>Dry eye</td><td>Pre-treat first</td><td>Most common post-LASIK complaint; LASIK worsens pre-existing dry eye</td></tr></tbody></table></div>
+
+<div class="concept">
+<div class="concept-title">Why RSB &lt;250 µm Causes Ectasia</div>
+<p>The cornea holds its shape through the structural rigidity of its collagen lamellae. 
+If too much stroma is removed (thin RSB), the remaining tissue cannot withstand normal IOP → the posterior cornea slowly bulges forward → post-LASIK ectasia.
+This is mechanically identical to KC — ectasia driven by mechanical weakness under IOP.
+This is why <b>forme fruste KC</b> is an absolute contraindication to LASIK — the stroma is already weak before any ablation.</p>
+</div>
+
+<div class="callout warn">⚠️ Forme fruste KC / posterior elevation >16 µm on Pentacam / BAD-D score >1.6 = ABSOLUTE contraindication to LASIK. This is not a relative contraindication. LASIK on a subclinically ectatic cornea will cause iatrogenic ectasia — vision-threatening and not fully reversible.</div>
+
+<h3>LASIK Intraoperative Complications</h3>
+
+<div class="tbl-wrap"><table><thead><tr><th>Complication</th><th>Cause</th><th>Immediate Management</th><th>When to Re-ablate</th></tr></thead><tbody><tr><td>Buttonhole flap</td><td>Flat cornea (K<41D) or inadequate suction</td><td>STOP; replace flap; wait 3–6 months minimum</td><td>Convert to PRK — never attempt LASIK again on that eye</td></tr><tr><td>Incomplete flap</td><td>Suction loss early in pass</td><td>STOP; replace flap; wait 3 months</td><td>Can attempt again or convert to PRK</td></tr><tr><td>Free cap (no hinge)</td><td>Complete pass, hinge not spared</td><td>Mark orientation with gentian violet; replace epithelium-side up; wait 3 months</td><td>Re-attempt LASIK with care or convert to PRK</td></tr><tr><td>Flap displacement</td><td>Trauma post-op (rubbing, contact)</td><td>Lift, irrigate interface with BSS, reposition within hours</td><td>No change to ablation</td></tr><tr><td>DLK (Sands of Sahara)</td><td>Sterile interface inflammation; Grade 1–4</td><td>Grade 1–2: intensive steroids; Grade 3–4: lift flap + irrigate</td><td>No change to ablation</td></tr><tr><td>Epithelial ingrowth</td><td>Epithelial cells under flap edge</td><td>Observe if peripheral/non-progressive; lift and scrape if central/progressing</td><td>After removal stabilises</td></tr></tbody></table></div>
+
+<h3 id="cxl">Corneal Cross-Linking (CXL)</h3>
+
+<figure class="clinical-image">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Corneal_crosslinking.jpg/640px-Corneal_crosslinking.jpg" alt="Corneal crosslinking CXL UV-A" 
+       style="width:100%; max-width:640px; border-radius:6px; border:1px solid #ddd;"
+       onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';">
+  <figcaption>Corneal cross-linking — UV-A delivery after riboflavin soaking; blue light visible through riboflavin-stained cornea. (Wikimedia Commons / CC BY-SA)</figcaption>
+</figure>
+
+<div class="concept">
+<div class="concept-title">What CXL Actually Does — The Chemistry</div>
+<p>Riboflavin (vitamin B₂) is a photosensitiser. 
+UV-A (365 nm) activates riboflavin → generates reactive oxygen species (ROS). 
+ROS cause <b>new covalent bonds (cross-links) between adjacent collagen molecules</b> in the stroma.
+Result: stiffer, biomechanically stronger stroma that resists ectasia under IOP.</p>
+<p><b>CXL does NOT reverse ectasia</b> — it halts progression. Some patients get 1–2D reduction in Kmax over months (bonus flattening from stromal remodelling) but this is a side effect, not the goal. 
+Goal = stabilisation.</p>
+</div>
+
+<div class="concept">
+<div class="concept-title">Standard Dresden Protocol (Steps in Order)</div>
+<ol>
+  <li>Topical anaesthetic; <b>remove epithelium</b> over 9 mm zone</li>
+  <li>Riboflavin 0.1% drops every 2 minutes × 30 minutes (stromal soak)</li>
+  <li>Check: <b>aqueous should appear yellow-green</b> in AC on slit lamp = riboflavin has penetrated to anterior chamber (confirms adequate stromal saturation)</li>
+  <li><b>Measure pachymetry</b> after soak — must be ≥400 µm before UV-A delivery. If &lt;400 µm → use hypoosmolar riboflavin to swell the stroma. UV-A can damage endothelium if cornea is too thin.</li>
+  <li>UV-A 365 nm at 3 mW/cm² × 30 minutes = total dose 5.4 J/cm²</li>
+  <li>BCL + topical antibiotic until epithelium heals (~5 days)</li>
+</ol>
+</div>
+
+<div class="callout pearl">📌 The 400 µm safety rule: if pachymetry after soaking is <400 µm, the UV-A energy will reach the endothelium and cause endothelial damage. This is why you re-measure AFTER the riboflavin soak, not just at baseline — the soak itself can swell the stroma somewhat.</div>
+
+<div class="tbl-wrap"><table><thead><tr><th>CXL Variant</th><th>Pros</th><th>Cons</th><th>Status</th></tr></thead><tbody><tr><td>Epi-off (Dresden standard)</td><td>Best efficacy, deepest penetration (300 µm demarcation line)</td><td>Pain 24–72h; infection risk (rare); 5-day epithelial healing</td><td>Gold standard</td></tr><tr><td>Accelerated epi-off (9 mW/cm²)</td><td>30 min treatment time vs 60 min</td><td>Marginally less effective at very high irradiance; same risks as standard</td><td>Widely used</td></tr><tr><td>Epi-on (transepithelial)</td><td>No pain, no infection, usable on thin corneas</td><td>Shallower penetration, less effective, shallow demarcation line</td><td>Not yet standard of care</td></tr></tbody></table></div>
+
+<h3 id="icrs">Intracorneal Ring Segments (ICRS)</h3>
+
+<div class="concept">
+<div class="concept-title">Arc Shortening — How ICRS Flatten the Cone</div>
+<p>ICRS (Intacs, Kerarings) are semi-circular PMMA inserts placed in mid-peripheral stroma at 75–80% depth via a femtosecond laser tunnel.
+Mechanism: <b>arc shortening</b> — inserting a semi-circular segment shortens the arc length of that portion of corneal circumference. 
+Like tightening the periphery of a sphere: the peripheral cornea shortens → the central cornea is pushed to flatten (the apex descends).
+Greater arc length and smaller inner diameter = greater flattening effect.</p>
+<p><b>Reversible</b> — can be removed and cornea returns largely to pre-op shape.
+Used in KC after CXL has stabilised the cornea: CXL first (stabilise), then ICRS (optically rehabilitate — reduce Kmax, reduce astigmatism → improve contact lens fit or spectacle-correctable vision).</p>
+</div>
+
+<h3 id="other-ref">Other Refractive Procedures</h3>
+
+<div class="tbl-wrap"><table><thead><tr><th>Procedure</th><th>Mechanism</th><th>Key Facts for Exams</th></tr></thead><tbody><tr><td>PRK (Photorefractive Keratectomy)</td><td>Epithelium removed manually; excimer laser directly on Bowman's/stroma surface; no flap</td><td>No flap = no ectasia from flap. Slower recovery (3–5 days pain). Haze risk — MMC (mitomycin C) 0.02% applied for 15–30s prevents haze. Preferred for thin corneas, contact sport athletes.</td></tr><tr><td>SMILE (Small Incision Lenticule Extraction)</td><td>Femtosecond laser cuts a lenticule intrastromally; surgeon removes it through 2–3 mm incision</td><td>No flap (intrastromal only). Less dry eye than LASIK (fewer cut nerves). Limited range of correction vs LASIK. No LASIK flap complications.</td></tr><tr><td>Orthokeratology</td><td>Overnight rigid reverse-geometry CL gently reshapes epithelium</td><td>Fully reversible — effect gone in days without lens. Used for myopia control in children (reduces axial elongation). Not surgical.</td></tr><tr><td>Conductive Keratoplasty (CK)</td><td>Radiofrequency probe shrinks peripheral collagen → central steepening for hyperopia</td><td>Effect is TEMPORARY (regresses). Uses RF energy (not laser). Mentioned in exams as 'non-laser refractive procedure.'</td></tr><tr><td>LRI / Arcuate Keratotomy</td><td>Corneal incisions at limbus (LRI) or 6–7mm OZ (AK) to relax steep meridian of astigmatism</td><td>Coupling ratio ~1:1: flattening of steep meridian + steepening of flat meridian with minimal change in SE. Small MYOPIC shift (not hyperopic). LRI weaker than AK.</td></tr><tr><td>Phakic IOL (e.g. ICL)</td><td>Collamer lens implanted in posterior chamber (sulcus) or anterior chamber without removing crystalline lens</td><td>For high myopia (>−10D) or thin corneas. Preserves corneal tissue entirely. Reversible. Risk: cataract, raised IOP, pupillary block.</td></tr></tbody></table></div>
+
+</section>
+<div class="chapter" style="background:#1a3a5c; color:white; text-align:center; padding:36px 48px;">
+  <p style="font-size:16px; margin-bottom:8px;">End of Cornea &amp; Refractive Surgery Key Concepts</p>
+  <p style="font-size:12px; opacity:0.6;">Kanski's Clinical Ophthalmology 9th ed. · AAO BCSC Sections 8 &amp; 13 · HEDS Study · Arab Board Q Bank<br>
+  Clinical images © their respective authors (Wikimedia Commons, CC-licensed) — loaded from web when online</p>
+</div>
+</main>
+<script>
+const links = document.querySelectorAll('#toc a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('[id]').forEach(el => {
+    if (window.scrollY >= el.offsetTop - 100) cur = el.id;
+  });
+  links.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#'+cur);
+  });
+});
+</script>
+</body>
+</html>
